@@ -31,22 +31,22 @@ struct Mapa{
 
 int escolherMapa(int escolhaMapa){
     cout << "Escolha um mapa: " << endl << endl
-    <<"[1]" << endl
+    <<"Opcao [1]" << endl <<endl
     <<"RATO,  PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
     <<"VAZIO, PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
     <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
     <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
     <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl 
     << endl
-    <<"[2]" << endl
+    <<"Opcao [2]" << endl << endl
     <<"RATO,   PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
-    << endl;
-    cin >> escolhaMapa;
-    cout << endl;
+    << endl; 
+    cout << "Opcao escolhida: "; cin >> escolhaMapa; 
+    
 
     return escolhaMapa;
 }
