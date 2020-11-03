@@ -7,7 +7,6 @@ const char DIREITA = 'D';
 const char ESQUERDA = 'E';
 
 struct Rato{
-    char forma;
     int posX;
     int posY;
     bool temQueijo;
