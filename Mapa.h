@@ -18,6 +18,16 @@ struct Mapa{
     };
 };
 
+struct MapaErro{
+    char cenario[5][5] = {
+        VAZIO,  PAREDE,  VAZIO,  VAZIO,  VAZIO,
+        PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO,
+        PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
+        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
+        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
+    };
+};
+
 void mostrarMapa(Mapa umMapa){
     for (int i=0; i<5; i++) {
         for (int j=0; j<5; j++) {
