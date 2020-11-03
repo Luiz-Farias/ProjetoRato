@@ -7,5 +7,8 @@ using namespace std;
 
 int main(){
     
+    Mapa mapaSelecionado = criarMapa(1);
+    mostrarMapa(mapaSelecionado);
+
     return 0;
 }
