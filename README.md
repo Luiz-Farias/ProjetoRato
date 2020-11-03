@@ -1,2 +1,2 @@
 # ProjetoRato
- N1_Tecnicas: labirinto do rato em busca ao queijo
+ N1_Tecnicas: labirinto do rato em busca do queijo
