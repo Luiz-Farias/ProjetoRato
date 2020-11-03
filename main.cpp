@@ -6,9 +6,13 @@ using namespace std;
 
 
 int main(){
+    int escolhaMapa;
+
+    escolhaMapa = escolherMapa(escolhaMapa);
     
-    Mapa mapaSelecionado = criarMapa(1);
-    mostrarMapa(mapaSelecionado);
+
+    Mapa mapaSelecionado = criarMapa();
+    mostrarMapa(mapaSelecionado, escolhaMapa);
 
     return 0;
 }

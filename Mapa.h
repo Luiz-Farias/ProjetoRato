@@ -10,37 +10,52 @@ const char VAZIO = 'V';
 const char QUEIJO = 'Q';
 
 struct Mapa{
-    char cenario[5][5];
-};
+    char cenario[5][5] = 
+    { 
+        RATO,  PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO, PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
+        VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO,
+        VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO
+    };
 
-
-Mapa criarMapa(int escolha){
-    Mapa mapaEscolhido;
-
-    if(escolha == 1){
-        mapaEscolhido.cenario[5][5] = 
-        {
-        RATO 
-        };
-    }else if(escolha == 2){
-        mapaEscolhido.cenario[5][5] = {
+    char cenarioErro[5][5] =
+    {
         RATO,   PAREDE,  VAZIO,  VAZIO,  VAZIO,
         PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO,
         PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
         VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
         VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
     };
-    }
-    
-return mapaEscolhido;
+};
+
+int escolherMapa(int escolhaMapa){
+    cout << "escolha um mapa: ";
+    cin >> escolhaMapa;
+
+    return escolhaMapa;
 }
 
-void mostrarMapa(Mapa umMapa){
-    for (int i=0; i<5; i++) {
-        for (int j=0; j<5; j++) {
-            cout <<umMapa.cenario[i][j] << "\t";
+Mapa criarMapa(){
+        Mapa mapa;
+        return mapa;
+}
+
+void mostrarMapa(Mapa umMapa, int escolhaMapa){
+    if (escolhaMapa == 1){
+        for (int i=0; i<5; i++) {
+            for (int j=0; j<5; j++) {
+                cout <<umMapa.cenario[i][j] << "\t";
+            }
+            cout << endl;
         }
-        cout << endl;
+    }else if (escolhaMapa == 2){
+        for (int i=0; i<5; i++) {
+            for (int j=0; j<5; j++) {
+                cout <<umMapa.cenarioErro[i][j] << "\t";
+            }
+            cout << endl;
+        }
     }
 }
 
