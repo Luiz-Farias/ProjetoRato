@@ -2,6 +2,7 @@
 #define Mapa_h
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 const char RATO = 'R';
