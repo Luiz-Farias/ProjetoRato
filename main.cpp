@@ -6,14 +6,11 @@ using namespace std;
 
 
 int main(){
-    int escolhaMapa;
-    string msg;
-
-    escolhaMapa = escolherMapa(escolhaMapa);
-    Rato ratinho = criarRato(escolhaMapa);
-    Mapa mapaSelecionado = criarMapa();
+    int escolhaMapa = escolherMapa(escolhaMapa);
+    Mapa mapaSelecionado;
+    Rato ratinho;
     mostrarMapa(mapaSelecionado, escolhaMapa);
-    pegarQueijo(ratinho, mapaSelecionado, 0, 0, ratinho.deOndeVeio);
+    pegarQueijo(ratinho, mapaSelecionado, 0, 0, ratinho.deOndeVeio, escolhaMapa);
 
     return 0;
 }

@@ -29,6 +29,7 @@ struct Mapa{
         VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
         VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
     };
+
 };
 
 int escolherMapa(int escolhaMapa){
@@ -47,15 +48,10 @@ int escolherMapa(int escolhaMapa){
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
     << endl; 
-    cout << "Opcao escolhida: "; cin >> escolhaMapa; 
+    cout << "Opcao escolhida: "; 
+    cin >> escolhaMapa; 
     
-
     return escolhaMapa;
-}
-
-Mapa criarMapa(){
-        Mapa mapa;
-        return mapa;
 }
 
 void mostrarMapa(Mapa umMapa, int escolhaMapa){
@@ -74,6 +70,7 @@ void mostrarMapa(Mapa umMapa, int escolhaMapa){
             }
             cout << endl;
         }
+        cout << endl;
     }
 }
 
