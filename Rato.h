@@ -3,19 +3,19 @@
 
 #include <iostream>
 #include <string>
+#include "Mapa.h"
 using namespace std;
 
 const char CIMA = 'C';
 const char BAIXO = 'B';
 const char DIREITA = 'D';
 const char ESQUERDA = 'E';
-const char NANDOU = 'N';
 
 struct Rato{
     int posX;
     int posY;
-    bool temQueijo;
-    char deOndeVeio = NANDOU;
+    bool temQueijo = false;
+    char deOndeVeio;
 };
 
 Rato criarRato(int mapaEscolhido){
@@ -34,29 +34,40 @@ Rato criarRato(int mapaEscolhido){
     return ratinho;
 }
 
-bool pegarQueijo(Rato ratinho){
-    string msg;
+bool pegarQueijo(Rato ratinho, Mapa mapaSelecionado, int x, int y, char deOndeVeio){
 
-    if(ratinho.posX < 0 || ratinho.posY > 5){
+    if(ratinho.temQueijo == true && x == 0 && y == 0){
+        return true;
+    }else if(mapaSelecionado.cenario[x][y] == QUEIJO){
+        ratinho.temQueijo = true;
+        return true;
+    }else if(mapaSelecionado.cenario[x][y] == PAREDE){
         return false;
-    }else if(ratinho.posX < 0 || ratinho.posY > 5){
+    }else if(x > 5 || x < 0 || y > 5 || y < 0){
         return false;
-    }else if(ratinho.posX == 1 && ratinho.posY == 0 || ratinho.posX == 2 && ratinho.posY == 0){
-        return false;
-    }else if(ratinho.posX == 1 && ratinho.posY == 1 || ratinho.posX == 2 && ratinho.posY == 1){
-        return false;
-    }else if(ratinho.temQueijo == true){
-        return false;
+    }else{
+
+        mapaSelecionado.cenario[x][y] = RATO;
+        mostrarMapa(mapaSelecionado, 1);
+
+        if((deOndeVeio != CIMA) && ratinho.temQueijo == false && pegarQueijo(ratinho, mapaSelecionado, x-1, y, BAIXO)){
+            cout << "Rato subiu e se encontra na posição [" << x << "][" << y << "]" << endl;
+            return true;
+        }else if((deOndeVeio != BAIXO) && ratinho.temQueijo == false && pegarQueijo(ratinho, mapaSelecionado, x+1, y, CIMA)){
+            cout << "Rato desceu e se encontra na posição [" << x << "][" << y << "]" << endl;
+            return true;
+        }else if((deOndeVeio != ESQUERDA) && ratinho.temQueijo == false && pegarQueijo(ratinho, mapaSelecionado, x, y-1, DIREITA)){
+            cout << "Rato avançou para esquerda e se encontra na posição [" << x << "][" << y << "]" << endl;
+            return true;
+        }else if((deOndeVeio != DIREITA) && ratinho.temQueijo == false && pegarQueijo(ratinho, mapaSelecionado, x, y+1, ESQUERDA)){
+            cout << "Rato avançou para direita se encontra na posição [" << x << "][" << y << "]" << endl;
+            return true;
+        }else{
+            cout << "impossivel encontrar o queijo!!" << endl;
+            return false;
+        }
+
     }
-
-    cout << msg;
-
-    if(ratinho.deOndeVeio == CIMA || ratinho.deOndeVeio == ESQUERDA || ratinho.deOndeVeio == DIREITA || ratinho.deOndeVeio == NANDOU){
-        ratinho.posY = ratinho.posY + 1;
-        msg = "O rato está na posição Y: " + ratinho.posX + "e X: " + ratinho.posX;
-        pegarQueijo(ratinho);
-    }
-    
 }
 
 #endif

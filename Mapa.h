@@ -9,20 +9,21 @@ const char RATO = 'R';
 const char PAREDE = 'P';
 const char VAZIO = 'V';
 const char QUEIJO = 'Q';
+const char ENTRADA = 'E';
 
 struct Mapa{
     char cenario[5][5] = 
     { 
-        RATO,  PAREDE,  PAREDE, VAZIO,  VAZIO,
-        VAZIO, PAREDE,  PAREDE, VAZIO,  VAZIO,
-        VAZIO, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
-        VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO,
-        VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO
+        ENTRADA,PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO,  PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO,  VAZIO,   VAZIO,  VAZIO,  QUEIJO,
+        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
+        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
     };
 
     char cenarioErro[5][5] =
     {
-        RATO,   PAREDE,  VAZIO,  VAZIO,  VAZIO,
+        ENTRADA,PAREDE,  VAZIO,  VAZIO,  VAZIO,
         PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO,
         PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
         VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
@@ -33,14 +34,14 @@ struct Mapa{
 int escolherMapa(int escolhaMapa){
     cout << "Escolha um mapa: " << endl << endl
     <<"Opcao [1]" << endl <<endl
-    <<"RATO,  PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
-    <<"VAZIO, PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
-    <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
-    <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
-    <<"VAZIO, VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl 
+    <<"ENTRADA,PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
+    <<"VAZIO,  PAREDE,  PAREDE, VAZIO,  VAZIO," << endl 
+    <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
+    <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
+    <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl 
     << endl
     <<"Opcao [2]" << endl << endl
-    <<"RATO,   PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
+    <<"ENTRADA,   PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
@@ -65,6 +66,7 @@ void mostrarMapa(Mapa umMapa, int escolhaMapa){
             }
             cout << endl;
         }
+        cout << endl;
     }else if (escolhaMapa == 2){
         for (int i=0; i<5; i++) {
             for (int j=0; j<5; j++) {

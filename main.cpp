@@ -7,12 +7,13 @@ using namespace std;
 
 int main(){
     int escolhaMapa;
-    Rato ratinho;
+    string msg;
 
     escolhaMapa = escolherMapa(escolhaMapa);
-    ratinho = criarRato(escolhaMapa);
+    Rato ratinho = criarRato(escolhaMapa);
     Mapa mapaSelecionado = criarMapa();
     mostrarMapa(mapaSelecionado, escolhaMapa);
+    pegarQueijo(ratinho, mapaSelecionado, 0, 0, ratinho.deOndeVeio);
 
     return 0;
 }
