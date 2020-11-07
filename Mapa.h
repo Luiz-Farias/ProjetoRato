@@ -42,7 +42,7 @@ int escolherMapa(int escolhaMapa){
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl 
     << endl
     <<"Opcao [2]" << endl << endl
-    <<"ENTRADA,   PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
+    <<"ENTRADA,PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO," << endl 
     <<"PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO," << endl
     <<"VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO," << endl
