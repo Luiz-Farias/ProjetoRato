@@ -14,20 +14,20 @@ const char ENTRADA = 'E';
 struct Mapa{
     char cenario[5][5] = 
     { 
-        ENTRADA,PAREDE,  PAREDE, VAZIO,  VAZIO,
-        VAZIO,  PAREDE,  PAREDE, VAZIO,  VAZIO,
-        VAZIO,  VAZIO,   VAZIO,  VAZIO,  QUEIJO,
-        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
-        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
+        ENTRADA, PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO,   PAREDE,  PAREDE, VAZIO,  VAZIO,
+        VAZIO,   VAZIO,   VAZIO,  VAZIO,  QUEIJO,
+        VAZIO,   VAZIO,   VAZIO,  VAZIO,  VAZIO,
+        VAZIO,   VAZIO,   VAZIO,  VAZIO,  VAZIO
     };
 
     char cenarioErro[5][5] =
     {
-        ENTRADA,PAREDE,  VAZIO,  VAZIO,  VAZIO,
-        PAREDE, PAREDE,  VAZIO,  VAZIO,  VAZIO,
-        PAREDE, VAZIO,   VAZIO,  VAZIO,  QUEIJO,
-        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO,
-        VAZIO,  VAZIO,   VAZIO,  VAZIO,  VAZIO
+        ENTRADA, PAREDE,  VAZIO,  VAZIO,  VAZIO,
+        PAREDE,  PAREDE,  VAZIO,  VAZIO,  VAZIO,
+        PAREDE,  VAZIO,   VAZIO,  VAZIO,  QUEIJO,
+        VAZIO,   VAZIO,   VAZIO,  VAZIO,  VAZIO,
+        VAZIO,   VAZIO,   VAZIO,  VAZIO,  VAZIO
     };
 
 };
